@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49afb84dfcecc9c4cb79af97ddfec309, type: 3}
+  m_Name: Diamonds_k
+  m_EditorClassIdentifier: 
+  _color: 2
+  _name: 7
+  _cardPrefab: {fileID: 4426894635305279857, guid: 98d57ea0e7a4f124da51bf6ca583462c, type: 3}

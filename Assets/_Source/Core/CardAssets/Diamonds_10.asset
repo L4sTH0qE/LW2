@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49afb84dfcecc9c4cb79af97ddfec309, type: 3}
-  m_Name: Card
+  m_Name: Diamonds_10
   m_EditorClassIdentifier: 
-  _color: 0
-  _name: 0
-  _cardPrefab: {fileID: 0}
+  _color: 2
+  _name: 8
+  _cardPrefab: {fileID: 4426894635305279857, guid: d67493ae5f2b6734e9c6b091cab68aa7, type: 3}

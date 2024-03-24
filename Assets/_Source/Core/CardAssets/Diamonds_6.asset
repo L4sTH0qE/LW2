@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Diamonds_6
   m_EditorClassIdentifier: 
   _color: 2
-  _name: 4
+  _name: 0
   _cardPrefab: {fileID: 4426894635305279857, guid: 4c9a924eab5ceaa4288e05b52ad7bd6d, type: 3}

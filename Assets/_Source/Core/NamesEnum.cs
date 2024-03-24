@@ -6,10 +6,6 @@ namespace _Source.Core
 {
     public enum NamesEnum
     {
-        Two,
-        Three,
-        Four,
-        Five,
         Six,
         Seven,
         Eight,

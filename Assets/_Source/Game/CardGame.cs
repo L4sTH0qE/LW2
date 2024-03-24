@@ -9,12 +9,12 @@ namespace _Source.Game
     public class CardGame : MonoBehaviour
     {
         private static CardGame _instance;
-        private Dictionary<CardInstance, CardView> cardDictionary;
-        [SerializeField] public List<CardAsset> cardAssets;
+        public Dictionary<CardInstance, CardView> _cardDictionary = new Dictionary<CardInstance, CardView>();
+        [SerializeField] public List<CardAsset> _cardAssets;
 
         private CardGame()
         {
-            cardAssets = new List<CardAsset>();
+            _cardAssets = new List<CardAsset>();
         }
         private void Awake() 
         {
@@ -23,6 +23,7 @@ namespace _Source.Game
                 Debug.LogWarning("Error"); 
             }
             _instance = this; 
+            StartGame();
         } 
  
         public static CardGame GetInstance() 
@@ -32,27 +33,45 @@ namespace _Source.Game
 
         public void StartGame()
         {
-            foreach (CardAsset asset in cardAssets)
+            foreach (CardAsset asset in _cardAssets)
             {
-                CreateCard(asset, 0);
+                CreateCard(asset, 2);
             }
         }
 
         public void CreateCardView(CardInstance cardInstance)
         {
             GameObject obj = null;
-            obj = GameObject.Instantiate(cardInstance.GetCardAsset().GetCardPrefab());
+            obj = Instantiate(cardInstance.GetCardAsset().GetCardPrefab());
             obj.AddComponent<CardView>();
-            obj.GetComponent<CardView>().Init(cardInstance);
-            cardDictionary[cardInstance] = obj.GetComponent<CardView>();
+            if (obj.TryGetComponent(out CardView view))
+            {
+                view.Init(cardInstance);
+                view.transform.localPosition = Vector3.zero;
+            }
+            _cardDictionary[cardInstance] = obj.GetComponent<CardView>();
         }
 
         public void CreateCard(CardAsset cardAsset, int layoutId)
         {
             CardInstance cardInstance = new CardInstance(cardAsset);
-            cardDictionary.Add(cardInstance, null);
+            cardInstance.GetCardAsset().GetCardPrefab().transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            _cardDictionary.Add(cardInstance, null);
             CreateCardView(cardInstance);
             cardInstance.MoveToLayout(layoutId);
+        }
+        
+        public List<CardInstance> GetCardsInLayout(int layoutId)
+        {
+            List<CardInstance> cards = new List<CardInstance>();
+            foreach (var card in _cardDictionary.Keys)
+            {
+                if (card.LayoutId == layoutId)
+                {
+                    cards.Add(card);
+                }
+            }
+            return cards;
         }
     }
 }

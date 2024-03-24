@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Spades_j
   m_EditorClassIdentifier: 
   _color: 0
-  _name: 9
+  _name: 5
   _cardPrefab: {fileID: 82016540317016250, guid: e3b3477bf452ef445946aa1257b70fbd, type: 3}

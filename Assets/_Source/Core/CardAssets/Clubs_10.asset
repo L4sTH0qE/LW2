@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Clubs_10
   m_EditorClassIdentifier: 
   _color: 1
-  _name: 8
+  _name: 4
   _cardPrefab: {fileID: 6635384932708880703, guid: 3055e66e88f388b4b8663fe71c7c6858, type: 3}

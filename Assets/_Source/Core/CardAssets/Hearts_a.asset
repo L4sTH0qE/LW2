@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hearts_a
   m_EditorClassIdentifier: 
   _color: 3
-  _name: 12
+  _name: 8
   _cardPrefab: {fileID: 8004081245775084681, guid: 23be3f2b57914e5428c84dfad58089fe, type: 3}
